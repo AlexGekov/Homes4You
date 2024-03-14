@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 'Cormorant Infant';
+}
+
+body {
+    background-image: url('/client/Images/House.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+nav {
+    padding-right: 4em;
+    justify-content: center;
+    align-self: center;
+}
+
+nav ul li {
+    font-family: 'Karla';
+    font-size: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.captcha-div {
+    padding-left: 60px;
+}
+
+.container.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FFF;
+}
+
+.container.heading h1 {
+    font-size: 90px;
+    padding-top: 130px;
+    padding-bottom: 120px;
+}
+
+.container.heading p {
+    text-align: center;
+    font-family: 'Karla';
+    font-size: 20px;
+    padding-bottom: 180px;
+}
+
+.site-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: none;
+    padding: 2em;
+}
+
+.head-btn {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.head-btn:hover {
+    font-size: larger;
+}
+
+.heading-logo img {
+    width: 120px;
+    height: 60px;
+}
+
+.site-header a {
+    color: #FFF;
+}
+
+.site-header ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3.5em;
+}
+
+.site-header li {
+    list-style: none;
+    ;
+}
+
+.site-header,
+.site-heading {
+    background: none;
+}
+
+.wrapper {
+    margin: 0 auto;
+    color: azure;
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 1600px;
+    height: 750px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+}
+
+.text-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: aqua; */
+    width: 600px;
+    height: 400px;
+}
+
+.btn-box {
+    width: 100%;
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn:hover {
+    background: #a7a8aa;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #ffffff;
+    margin: 30px 0;
+}
+
+.input-box input {
+    color: #FFF;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #d8cfcf;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+
+}
+
+.log {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.log:hover {
+    cursor: pointer;
+}
+
+img {
+    width: 500px;
+    height: 375px;
+    aspect-ratio: auto;
+}
+
+.btn {
+    width: 120px;
+    height: 45px;
+    background: #dadbdd;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #000000;
+    font-weight: 500;
+    transition: all 0.3s ease 0s;
+}
+
+p {
+    margin: 6px 0 6px 0;
+}
+
+.btn.want {
+    background: rgb(7, 101, 209);
+}
+
+.btn.edit {
+    background: rgb(1, 168, 10);
+}
+
+.btn.edit:hover {
+    background: rgb(0, 124, 6);
+}
+
+.btn.delete {
+    background: rgb(253, 1, 1);
+}
+
+.btn.delete:hover {
+    background: rgb(187, 0, 0);
+}
+
+.btn.want:hover {
+    background: rgb(5, 73, 151);
+}
