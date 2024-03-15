@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-image: url('//client/public/Images/House.jpg');
+    background-image: url('../../../assets/Images/House.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
 }
