@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Infant&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: 16px/1.5 'Cormorant Infant';
+}
+
+body {
+    background-image: url('//client/public/Images/House.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+nav {
+    padding-right: 4em;
+    justify-content: center;
+    align-self: center;
+}
+
+nav ul li {
+    font-family: 'Karla';
+    font-size: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.captcha-div {
+    padding-left: 60px;
+}
+
+.container.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #FFF;
+}
+
+.container.heading h1 {
+    font-size: 90px;
+    padding-top: 130px;
+    padding-bottom: 120px;
+}
+
+.container.heading p {
+    text-align: center;
+    font-family: 'Karla';
+    font-size: 20px;
+    padding-bottom: 180px;
+}
+
+.site-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: none;
+    padding: 2em;
+}
+
+.head-btn {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.head-btn:hover {
+    font-size: larger;
+}
+
+.heading-logo img {
+    width: 120px;
+    height: 60px;
+}
+
+.site-header a {
+    color: #FFF;
+}
+
+.site-header ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3.5em;
+}
+
+.site-header li {
+    list-style: none;
+    ;
+}
+
+.site-header,
+.site-heading {
+    background: none;
+}
+
+.site-heading {
+    padding-top: 120px;
+    padding-bottom: 40px;
+}
+
+.beige {
+    display: flex;
+    background-color: #F8F0E9;
+}
+
+.special {
+    line-height: 1;
+    font-weight: bold;
+    font-size: 60px;
+    font-style: italic;
+}
+
+.pisna.mi {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.copy {
+    color: #FFF;
+}
