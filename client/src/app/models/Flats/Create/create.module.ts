@@ -15,7 +15,7 @@ export class CreatePostsComponent {
     create(form: NgForm): void {
         if (form.valid) {
             const { name, kind, description, year, image} = form.value
-            this.flatService.create(name, kind, description, year, image).subscribe(() => this.router.navigate(['/search']))
+            this.flatService.create(name, kind, description, Number(year), image).subscribe(() => this.router.navigate(['/search']))
         }
     }
 }

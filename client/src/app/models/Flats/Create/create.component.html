@@ -45,27 +45,22 @@
             <div class="input-box">
                 <input type="text" name="name" placeholder="Name" id="name" ngModel #inputName="ngModel" required
                     minlength="3" [ngModelOptions]="{updateOn: 'blur'}">
-                <label>Name</label>
             </div>
             <div class="input-box">
                 <input type="text" name="kind" placeholder="Kind" id="kind" ngModel #inputKind="ngModel" required
-                    minlength="5" [ngModelOptions]="{updateOn: 'blur'}">
-                <label>Kind</label>
+                    minlength="4" [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <div class="input-box">
                 <input type="text" name="description" placeholder="Description" id="description" ngModel
                     #inputDescription="ngModel" required minlength="10" [ngModelOptions]="{updateOn: 'blur'}">
-                <label>Description</label>
             </div>
             <div class="input-box">
                 <input type="text" name="year" placeholder="Year" id="year" ngModel #inputYear="ngModel" required
-                    m[ngModelOptions]="{updateOn: 'blur'}">
-                <label>Year</label>
+                    [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <div class="input-box">
                 <input type="text" name="image" placeholder="Image" id="image" ngModel #inputImage="ngModel" required
                     [ngModelOptions]="{updateOn: 'blur'}">
-                <label>Image</label>
             </div>
             <button class="btn">Create!</button>
         </form>

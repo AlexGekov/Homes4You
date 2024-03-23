@@ -5,7 +5,7 @@ exports.GetAll = () => post.find().lean()
 exports.Find = (Id) => post.findById(Id).lean()
 
 exports.create = async (Data) => {
-    const kindLength = 5
+    const kindLength = 4
     const nameLength = 3
     const descriptionLength = 10
 
@@ -15,7 +15,7 @@ exports.create = async (Data) => {
     if (Data.name.length <= nameLength) {
         throw new Error(`Name should be at least ${nameLength} characters long`)
     }
-    if (Data.year >= 1930 && Data.year <= 2024) {
+    if (Data.year <= 1930 && Data.year >= 2024) {
         throw new Error(`Year is from 1930 until the current year!`)
     }
     if (Data.description.length < descriptionLength) {

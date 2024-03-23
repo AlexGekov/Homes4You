@@ -101,3 +101,8 @@ h2{
     color: #000000;
     font-weight: 500;
 }
+
+.error p {
+    color: red;
+    font-weight: bold;
+}
