@@ -1,31 +1,71 @@
 <div class="wrapper">
     <div class="form-box">
         <h2>Create</h2>
-        <form action="#">
+        <div class="error-container">
+            <ng-container *ngIf="inputName.touched">
+                <div class="error" *ngIf="inputName.errors?.['required']">
+                    <p>Name is required!</p>
+                </div>
+
+                <div class="error" *ngIf="inputName.errors?.['minlength']">
+                    <p>Name should be more than 3 characters!</p>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="inputDescription.touched">
+                <div class="error" *ngIf="inputDescription.errors?.['required']">
+                    <p>Description is required!</p>
+                </div>
+
+                <div class="error" *ngIf="inputDescription.errors?.['minlength']">
+                    <p>Description should be more than 10 characters!</p>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="inputYear.touched">
+                <div class="error" *ngIf="inputYear.errors?.['required']">
+                    <p>Year is required!</p>
+                </div>
+                <div class="error" *ngIf="inputYear.errors?.['minlength']">
+                    <p>Year is from 1930 until the current year!</p>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="inputImage.touched">
+                <div class="error" *ngIf="inputImage.errors?.['required']">
+                    <p>ImageUrl is required!</p>
+                </div>
+                <div class="error" *ngIf="inputImage.errors?.['minlength']">
+                    <p>ImageUrl should be more than 10 characters!</p>
+                </div>
+                <div class="error"
+                    *ngIf="inputImage.errors?.['imageUrlInvalid'] && !inputImage.errors?.['minlength'] && !inputImage.errors?.['required']">
+                    <p>Please provide a real imageUrl!</p>
+                </div>
+            </ng-container>
+        </div>
+        <form class="form" #form="ngForm" (ngSubmit)="create(form)">
             <div class="input-box">
-                <span class="icon"></span>
-                <input type="text" name="" required>
+                <input type="text" name="name" placeholder="Name" id="name" ngModel #inputName="ngModel" required
+                    minlength="3" [ngModelOptions]="{updateOn: 'blur'}">
                 <label>Name</label>
             </div>
             <div class="input-box">
-                <span class="icon"></span>
-                <input type="text" name="" required>
+                <input type="text" name="kind" placeholder="Kind" id="kind" ngModel #inputKind="ngModel" required
+                    minlength="5" [ngModelOptions]="{updateOn: 'blur'}">
                 <label>Kind</label>
             </div>
             <div class="input-box">
-                <span class="icon"></span>
-                <input type="text" name="" required>
+                <input type="text" name="description" placeholder="Description" id="description" ngModel
+                    #inputDescription="ngModel" required minlength="10" [ngModelOptions]="{updateOn: 'blur'}">
                 <label>Description</label>
             </div>
             <div class="input-box">
-                <span class="icon"></span>
-                <input type="text" name="" required>
+                <input type="text" name="year" placeholder="Year" id="year" ngModel #inputYear="ngModel" required
+                    m[ngModelOptions]="{updateOn: 'blur'}">
                 <label>Year</label>
             </div>
             <div class="input-box">
-                <span class="icon"></span>
-                <input type="text" name="" required>
-                <label>image</label>
+                <input type="text" name="image" placeholder="Image" id="image" ngModel #inputImage="ngModel" required
+                    [ngModelOptions]="{updateOn: 'blur'}">
+                <label>Image</label>
             </div>
             <button class="btn">Create!</button>
         </form>

@@ -4,9 +4,10 @@ const jwt = require("../lib/jwt")
 const { SECRET } = require("../configs/SuperSecret")
 
 exports.register = async (email, username, password, repeatPassword) => {
-    const passwordLength = 5
+    const passwordLength = 6
     const emailLength = 10
-    const usernameLength = 6
+    const usernameLength = 5
+
 
     if (email.length <= emailLength) {
         throw new Error(`Email should be at least ${emailLength} characters long`)
