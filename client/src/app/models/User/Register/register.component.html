@@ -1,21 +1,64 @@
 <div class="wrapper">
     <div class="form-box">
         <h2>Register</h2>
-        <form action="#">
+        <div class="error-container">
+            <ng-container *ngIf="inputEmail.touched">
+                <div class="error" *ngIf="inputEmail.errors?.['required']">
+                    <p>Email is required!</p>
+                </div>
+
+                <div class="error" *ngIf="inputEmail.errors?.['minlength']">
+                    <p>Email should be at least 5 characters!</p>
+                </div>
+                <div class="error"
+                    *ngIf="inputEmail.errors?.['incorrectEmail'] && !inputEmail.errors?.['required'] && !inputEmail.errors?.['minlength']">
+                    <p>Please provide a correct email!</p>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="inputUsername.touched">
+                <div class="error" *ngIf="inputUsername.errors?.['required']">
+                    <p>Username is required!</p>
+                </div>
+                <div class="error" *ngIf="inputUsername.errors?.['minlength']">
+                    <p>Username should be at least 4 characters!</p>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="inputPassword.touched">
+                <div class="error" *ngIf="inputPassword.errors?.['required']">
+                    <p>Password is required!</p>
+                </div>
+                <div class="error" *ngIf="inputPassword.errors?.['minlength']">
+                    <p>Password should be at least 4 characters!</p>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="inputRepeatPassword.touched">
+                <div class="error" *ngIf="inputRepeatPassword.errors?.['required']">
+                    <p>Repeat password is required!</p>
+                </div>
+            </ng-container>
+        </div>
+        <form class="form" #form="ngForm" (ngSubmit)="register(form)">
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="text" required>
-                <label>Username</label>
+                <input type="text" name="username" placeholder="Username" id="username" ngModel #inputUsername="ngModel"
+                    required minlength="6" [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="email" required>
-                <label>Email</label>
+                <input type="text" name="email" placeholder="Email" id="email" ngModel #inputEmail="ngModel" required
+                    minlength="10" appEmail [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <div class="input-box">
                 <span class="icon"></span>
-                <input type="password" required>
-                <label>Password</label>
+                <input type="password" name="password" placeholder="Password" id="password" ngModel
+                    #inputPassword="ngModel" required minlength="5" [ngModelOptions]="{updateOn: 'blur'}">
+            </div>
+            <div class="input-box">
+                <span class="icon"></span>
+                <input type="password" name="repeatPassword" placeholder="Repeat password" id="repeatPassword" ngModel
+                    #inputRepeatPassword="ngModel" required [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <button class="btn">Register</button>
             <div class="stuff">
