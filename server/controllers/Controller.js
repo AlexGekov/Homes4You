@@ -5,6 +5,7 @@ router.get("/catalog", async (req, res) => {
     try {
         let posts = await Manager.GetAll()
         res.json(posts).end()
+        console.log("Sending posts...")
     } catch (err) {
         res.status(404)
     }

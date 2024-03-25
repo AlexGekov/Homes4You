@@ -8,11 +8,13 @@
 
 
     <section class="catalog">
-        <div class="post">
-            <img src="#" alt="Flat pic :D">
-            <p>Name: BIG AHH FLAT</p>
-            <p>Pirce: $$$</p>
-            <button class="btn-detail">Details</button>
+        <div *ngFor="let flat of flats">
+            <div class="post">
+                <img src={{flat.image}} alt="Flat pic :D">
+                <p class="name">Name: {{flat.name}}</p>
+                <p>Year: {{flat.year}}</p>
+                <a class="btn-detail" routerLink="{{flat._id}}">Details</a>
+            </div>
         </div>
     </section>
 </main>

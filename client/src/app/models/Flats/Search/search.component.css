@@ -48,6 +48,9 @@ input {
 }
 
 .btn-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 120px;
     height: 45px;
     background: #dadbdd;
@@ -90,4 +93,16 @@ input {
     border-radius: 20px;
     backdrop-filter: blur(20px);
     color: #FFF;
+}
+
+button{
+    margin-top: 30px;
+}
+
+img{
+    border-radius: 3px;
+}
+
+.name{
+    margin-top: 7px;
 }

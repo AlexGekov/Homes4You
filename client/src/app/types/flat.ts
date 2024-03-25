@@ -1,4 +1,5 @@
 export interface Flat {
+    _id: string
     name: string,
     kind: string,
     description: string,
