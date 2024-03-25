@@ -1,15 +1,17 @@
 <div class="wrapper">
-    <div class="image-box">
-        <img src="/client/Images/House.jpg" alt="logo">
-    </div>
-    <div class="text-box">
-        <!-- <p>Name: {{flat.name}}</p>
-        <P>Year:{{flat.year}}</P>
-        <p>{{flat.description}}</p>
-        <div class="btn-box">
-            <button class="btn want">Want</button>
-            <button class="btn edit">Edit</button>
-            <button class="btn delete">Delete</button>
-        </div> -->
+    <!-- <div *ngIf="! isLoading"> -->
+        <div class="image-box">
+            <img src={{flat?.image}} alt="logo">
+        </div>
+        <div class="text-box">
+            <p>Name: {{flat?.name}}</p>
+            <P>Year:{{flat?.year}}</P>
+            <p>{{flat?.description}}</p>
+            <div class="btn-box">
+                <button class="btn want">Want</button>
+                <button class="btn edit">Edit</button>
+                <button class="btn delete">Delete</button>
+            </div>
+        <!-- </div> -->
     </div>
 </div>

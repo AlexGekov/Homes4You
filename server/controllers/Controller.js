@@ -35,7 +35,8 @@ router.post("/create", async (req, res) => {
     }
 })
 
-router.get("/:postId/details", async (req, res) => {
+router.get("/catalog/:postId/details", async (req, res) => {
+    console.log("Loading details...")
     const postId = req.params.postId
     try {
         const post = await Manager.Find(postId)
@@ -88,6 +89,7 @@ router.post("/:postId/want", async (req, res) => {
 })
 
 router.delete("/:postId/details", async (req, res) => {
+    console.log("here")
     const postId = req.params.postId
     try {
         const post = await Manager.Delete(postId)
