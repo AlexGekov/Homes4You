@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div class="form-box">
-        <h2>Create</h2>
+        <h2>Edit</h2>
         <div class="error-container">
             <ng-container *ngIf="inputName.touched">
                 <div class="error" *ngIf="inputName.errors?.['required']">
@@ -41,28 +41,28 @@
                 </div>
             </ng-container>
         </div>
-        <form class="form" #form="ngForm" (ngSubmit)="create(form)">
+        <form class="form" #form="ngForm" (ngSubmit)="edit(form)">
             <div class="input-box">
                 <input type="text" name="name" placeholder="Name" id="name" ngModel #inputName="ngModel" required
-                    minlength="3" [ngModelOptions]="{updateOn: 'blur'}">
+                    minlength="3" [(ngModel)]="flat.name" [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <div class="input-box">
                 <input type="text" name="kind" placeholder="Kind" id="kind" ngModel #inputKind="ngModel" required
-                    minlength="4" [ngModelOptions]="{updateOn: 'blur'}">
+                    minlength="4" [(ngModel)]="flat.kind" [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <div class="input-box">
                 <input type="text" name="description" placeholder="Description" id="description" ngModel
-                    #inputDescription="ngModel" required minlength="10" [ngModelOptions]="{updateOn: 'blur'}">
+                    #inputDescription="ngModel" required minlength="10" [(ngModel)]="flat.description" [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <div class="input-box">
-                <input type="text" name="year" placeholder="Year" id="year" ngModel #inputYear="ngModel" required
+                <input type="text" name="year" placeholder="Year" id="year" [(ngModel)]="flat.year" ngModel #inputYear="ngModel" required
                     [ngModelOptions]="{updateOn: 'blur'}">
             </div>
             <div class="input-box">
-                <input type="text" name="image" placeholder="Image" id="image" ngModel #inputImage="ngModel" required
+                <input type="text" name="image" placeholder="Image" [(ngModel)]="flat.image" id="image" ngModel #inputImage="ngModel" required
                     [ngModelOptions]="{updateOn: 'blur'}">
             </div>
-            <button class="btn">Create!</button>
+            <button class="btn">Edit!</button>
         </form>
     </div>
 </div>

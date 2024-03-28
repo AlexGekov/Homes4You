@@ -20,6 +20,8 @@ router.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
         let [user, token] = await userManager.login(email, password)
+        res.cookie("authToken", token)
+        res.cookie("Id", user._id)
         res.json({
             authToken: token,
             userId: user._id

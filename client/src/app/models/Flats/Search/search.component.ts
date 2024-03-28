@@ -13,7 +13,6 @@ import { Flat } from "src/app/types/flat";
 export class SearchComponent implements OnInit {
     flats: Flat[] | null = []
 
-
     constructor(private http: HttpClient) { }
 
     ngOnInit() {

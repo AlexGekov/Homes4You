@@ -105,6 +105,9 @@ img {
 }
 
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 120px;
     height: 45px;
     background: #dadbdd;

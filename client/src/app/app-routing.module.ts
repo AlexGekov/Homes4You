@@ -16,7 +16,8 @@ const routes: Routes = [
   {
     path: "catalog", children: [
       { path: "", component: SearchComponent },
-      { path: ":postId/details", component: DetailsComponent }
+      { path: ":postId/details/edit", component: EditComponent },
+      { path: ":postId/details", component: DetailsComponent },
     ]
   },
   { path: "create", component: CreatePostsComponent },

@@ -12,6 +12,7 @@ import { DetailsComponent } from './models/Flats/Details/details.component';
 import { CreatePostsComponent } from './models/Flats/Create/create.module';
 import { HeaderComponent } from './models/Core/Header/header.component';
 import { AboutComponent } from './components/About/about.component';
+import { EditComponent } from './models/Flats/Edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AboutComponent } from './components/About/about.component';
     DetailsComponent,
     CreatePostsComponent,
     AboutComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,

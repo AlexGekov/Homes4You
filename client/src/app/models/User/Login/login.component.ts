@@ -16,7 +16,7 @@ export class LoginComponent {
     login(form: NgForm): void {
         if (form.valid) {
             const { email, password } = form.value
-            this.userService.login(email, password).subscribe(() => this.router.navigate(['/search']))
+            this.userService.login(email, password).subscribe(() => this.router.navigate(['/catalog']))
         }
     }
 }

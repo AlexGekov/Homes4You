@@ -89,7 +89,6 @@ router.post("/:postId/want", async (req, res) => {
 })
 
 router.delete("/:postId/details", async (req, res) => {
-    console.log("here")
     const postId = req.params.postId
     try {
         const post = await Manager.Delete(postId)
