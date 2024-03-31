@@ -7,12 +7,12 @@ import { environment } from 'src/app/enviroments/enviroments';
 @Injectable({
     providedIn: 'root'
 })
-export class CreateService {
+export class DetailsService {
     private flat: Flat | undefined;
 
     constructor(private http: HttpClient) { }
 
-    create(name: string, kind: string, description: string, year: number, image: string, owner: string) {
-        return this.http.post(`${environment.apiUrl}/posts/create`, { name, kind, description, year, image, owner}).pipe(tap((flat) => this.flat = flat as Flat))
+    want(postId: string, ownerId: string) {
+        return this.http.post(`${environment.apiUrl}/posts/${postId}/watch`, { postId, ownerId})
     }
 }

@@ -9,6 +9,7 @@ const PORT = 3030
 const expressConfig = require('./configs/expressConfig.js')
 const setCORS = require('./middlewares/corsMiddleware.js')
 const dbConnect = require('./configs/DbConfig.js')
+const cookieParser = require('cookie-parser')
 
 dbConnect()
     .then(() => console.log('DB connected successfully'))
@@ -16,6 +17,7 @@ dbConnect()
 expressConfig(app)
 setCORS(app)
 
+app.use(cookieParser())
 app.use(routes)
 app.use(auth)
 

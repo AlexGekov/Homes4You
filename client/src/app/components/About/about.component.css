@@ -102,6 +102,7 @@ nav ul li {
 
 .wrapper {
     margin: 0 auto;
+    width: 1400px;
     margin-top: 80px;
     color: rgb(255, 255, 255);
     display: flex;

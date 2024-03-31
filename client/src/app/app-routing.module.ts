@@ -8,6 +8,7 @@ import { CreatePostsComponent } from './models/Flats/Create/create.module';
 import { AboutComponent } from './components/About/about.component';
 import { DetailsComponent } from './models/Flats/Details/details.component';
 import { EditComponent } from './models/Flats/Edit/edit.component';
+import { authGuard } from './guards/auth.gurad';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
@@ -20,7 +21,7 @@ const routes: Routes = [
       { path: ":postId/details", component: DetailsComponent },
     ]
   },
-  { path: "create", component: CreatePostsComponent },
+  { path: "create", canActivate:[authGuard], component: CreatePostsComponent },
   { path: "about", component: AboutComponent },
 ];
 

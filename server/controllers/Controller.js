@@ -23,7 +23,7 @@ router.get("/catalog/:search", async (req, res) => {
 })
 
 router.post("/create", async (req, res) => {
-    const { kind, name, year, description, image, owner } = req.body
+    const { kind, name, year, description, image, owner} = req.body
     console.log({ kind, name, year, description, image, owner })
     try {
         await Manager.create({ kind, name, year, description, image, owner })
@@ -69,7 +69,7 @@ router.get("/:userId/catalog", async (req, res) => {
 })
 
 
-router.get("/:postId/want", async (req, res) => {
+router.get("/:postId/watch", async (req, res) => {
     try {
         await Manager.GetWants(postId)
         res.end()
@@ -78,10 +78,11 @@ router.get("/:postId/want", async (req, res) => {
     }
 })
 
-router.post("/:postId/want", async (req, res) => {
+router.post("/:postId/watch", async (req, res) => {
+    console.log("here")
     const { postId, userId } = req.body
     try {
-        await Manager.Want(postId, userId)
+        await Manager.Watch(postId, userId)
         res.end()
     } catch (err) {
         res.status(404)
@@ -100,10 +101,11 @@ router.delete("/:postId/details", async (req, res) => {
 
 
 router.put("/:postId/edit", async (req, res) => {
-    const postId = req.params.postId
+    const { postId } = req.params
     const { kind, name, manufacturer, description, image, } = req.body
     try {
         const post = await Manager.Edit(postId, { kind, name, manufacturer, description, image })
+        console.log(post)
         res.json(post).end()
     } catch (err) {
         res.status(404)

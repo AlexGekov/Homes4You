@@ -5,4 +5,6 @@ export interface Flat {
     description: string,
     image: string,
     year: number,
+    owner: string
+    Watch: []
 };

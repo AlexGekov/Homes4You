@@ -16,6 +16,6 @@ export class EditService {
 
 
     edit(name: string, kind: string, description: string, year: number, image: string, id: string) {
-        return this.http.put(`${environment.apiUrl}/posts/${id}/edit`, { name, kind, description, year, image }).pipe(tap((flat) => this.flat = flat as Flat))
+        return this.http.put(`api/posts/${id}/edit`, { name, kind, description, year, image }).pipe(tap((flat) => this.flat = flat as Flat))
     }
 }

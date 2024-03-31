@@ -62,7 +62,24 @@ exports.login = async (email, password) => {
     return [payload, token]
 }
 
-exports.FindUser = async (Id) => {
-    let user = await User.findById(Id)
-    return user
+exports.findUser = async (userId) => {
+    const user = await User.findById(userId)
+
+    if (user) {
+        return getAuthResult(user)
+    } else {
+        throw new Error('Invalid userId!')
+    }
+}
+
+async function getAuthResult(user) {
+    const payload = {
+        _id: user._id,
+        email: user.email,
+        username: user.username
+    }
+
+    const token = await jwt.sign(payload, SECRET)
+
+    return [payload, token]
 }

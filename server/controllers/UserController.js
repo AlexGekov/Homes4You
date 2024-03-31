@@ -20,8 +20,9 @@ router.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
         let [user, token] = await userManager.login(email, password)
+        console.log(user._id)
         res.cookie("authToken", token)
-        res.cookie("Id", user._id)
+        res.cookie("userId", user._id)
         res.json({
             authToken: token,
             userId: user._id
@@ -33,10 +34,31 @@ router.post("/login", async (req, res) => {
     }
 })
 
-router.get("/:userId/profile", async (req, res) => {
-    const userId = req.params.userId
+
+router.get('/getUser', async (req, res) => {
+    const userId = req.cookies.userId
     try {
-        let user = await userManager.FindUser(userId)
+        const [user, authToken] = await userManager.findUser(userId)
+
+        res.cookie('authToken', authToken)
+        res.cookie('userId', user._id)
+        res.json({
+            email: user.email,
+            username: user.username,
+            userId: user._id
+        })
+    } catch (err) {
+        res.status(400).json({
+            message: err.message
+        })
+    }
+})
+
+
+router.get("/:userId/profile", async (req, res) => {
+    const userId = req.params.Id
+    try {
+        let user = await userManager.findUser(userId)
         res.json(user).end()
     } catch (error) {
         res.status(404)
@@ -45,6 +67,8 @@ router.get("/:userId/profile", async (req, res) => {
 
 
 router.get("/logout", (req, res) => {
+    res.clearCookie('authToken')
+    res.clearCookie('userId')
     res.end()
 })
 
