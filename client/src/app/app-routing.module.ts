@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: ":postId/details", component: DetailsComponent },
     ]
   },
-  { path: "create", canActivate:[authGuard], component: CreatePostsComponent },
+  { path: "create", component: CreatePostsComponent },
   { path: "about", component: AboutComponent },
 ];
 

@@ -38,9 +38,11 @@ exports.Delete = (Id) => post.findByIdAndDelete(Id)
 
 exports.Edit = (Id, Data) => post.findByIdAndUpdate(Id, Data)
 
-exports.Watch = async (Id, userId) => {
+exports.Watch = async (Id, ownerId) => {
     const curPost = await post.findById(Id)
-    curPost.Watch.push(userId)
+    console.log(curPost)
+    console.log(ownerId)
+    curPost.Watch.push(ownerId)
     return curPost.save()
 }
 

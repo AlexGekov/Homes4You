@@ -20,12 +20,12 @@ router.post("/login", async (req, res) => {
     const { email, password } = req.body;
     try {
         let [user, token] = await userManager.login(email, password)
-        console.log(user._id)
+        const ID = user._id.toString()
         res.cookie("authToken", token)
-        res.cookie("userId", user._id)
+        res.cookie("userId", ID)
         res.json({
             authToken: token,
-            userId: user._id
+            userId: ID
         })
     } catch (error) {
         res.status(400).json({
@@ -39,13 +39,13 @@ router.get('/getUser', async (req, res) => {
     const userId = req.cookies.userId
     try {
         const [user, authToken] = await userManager.findUser(userId)
-
+        const ID = user._id.toString()
         res.cookie('authToken', authToken)
-        res.cookie('userId', user._id)
+        res.cookie('userId', ID)
         res.json({
             email: user.email,
             username: user.username,
-            userId: user._id
+            userId: ID
         })
     } catch (err) {
         res.status(400).json({

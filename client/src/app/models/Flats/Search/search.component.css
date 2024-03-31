@@ -33,6 +33,7 @@ input {
 }
 
 .btn {
+    font-weight: bold;
     margin-left: 20px;
     width: 120px;
     height: 45px;
@@ -43,11 +44,11 @@ input {
     cursor: pointer;
     font-size: 1em;
     color: #000000;
-    font-weight: 500;
     transition: all 0.3s ease 0s;
 }
 
 .btn-detail {
+    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -60,7 +61,6 @@ input {
     cursor: pointer;
     font-size: 1em;
     color: #000000;
-    font-weight: 500;
     transition: all 0.3s ease 0s;
 }
 
@@ -95,14 +95,20 @@ input {
     color: #FFF;
 }
 
-button{
+button {
     margin-top: 30px;
 }
 
-img{
+img {
     border-radius: 3px;
 }
 
-.name{
+.name {
     margin-top: 7px;
+}
+
+.heading {
+    color: #FFF;
+    text-align: center;
+
 }

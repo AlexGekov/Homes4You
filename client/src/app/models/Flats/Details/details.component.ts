@@ -25,7 +25,7 @@ export class DetailsComponent implements OnInit {
     }
 
     get isOwner(): boolean {
-        return this.flat?.owner === this.owner[1]
+        return this.flat.owner.toString() === this.owner[1]
     }
 
     get Wants(): boolean {

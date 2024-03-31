@@ -5,13 +5,13 @@
         </div>
         <button class="btn">Search</button>
     </div> -->
-
+    <h1 class="heading">You'll find the finest selection of properties here!</h1>
 
     <section class="catalog">
         <div *ngFor="let flat of flats">
             <div class="post">
                 <img src={{flat.image}} alt="Flat pic :D">
-                <p class="name">Name: {{flat.name}}</p>
+                <p class="name">{{flat.name}}</p>
                 <p>Year: {{flat.year}}</p>
                 <a class="btn-detail" routerLink="{{flat._id}}/details">Details</a>
             </div>

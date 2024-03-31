@@ -80,9 +80,10 @@ router.get("/:postId/watch", async (req, res) => {
 
 router.post("/:postId/watch", async (req, res) => {
     console.log("here")
-    const { postId, userId } = req.body
+    const { postId, ownerId } = req.body
+    console.log(ownerId)
     try {
-        await Manager.Watch(postId, userId)
+        await Manager.Watch(postId, ownerId)
         res.end()
     } catch (err) {
         res.status(404)
@@ -102,9 +103,9 @@ router.delete("/:postId/details", async (req, res) => {
 
 router.put("/:postId/edit", async (req, res) => {
     const { postId } = req.params
-    const { kind, name, manufacturer, description, image, } = req.body
+    const { kind, name, year, description, image, } = req.body
     try {
-        const post = await Manager.Edit(postId, { kind, name, manufacturer, description, image })
+        const post = await Manager.Edit(postId, { kind, name, year, description, image })
         console.log(post)
         res.json(post).end()
     } catch (err) {
