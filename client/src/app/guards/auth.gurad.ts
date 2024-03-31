@@ -12,6 +12,8 @@ export const authGuard: CanActivateFn = () => {
 export const revAuthGuard: CanActivateFn = () => {
     const userService = inject(UserService)
     const router = inject(Router)
+    const regex = /userId=([^;]+)/;
+    const Id = regex.test(document.cookie)
 
     return userService.isLoggedIn ? false : router.navigate(['/'])
 };

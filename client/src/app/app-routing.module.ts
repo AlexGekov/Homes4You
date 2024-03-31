@@ -13,7 +13,7 @@ import { authGuard, revAuthGuard } from './guards/auth.gurad';
 const routes: Routes = [
   { path: "", component: HomeComponent },
   { path: "login", canActivate: [revAuthGuard], component: LoginComponent },
-  { path: "register", canActivate: [revAuthGuard], component: RegisterComponent },
+  { path: "register", canActivate:[revAuthGuard],  component: RegisterComponent },
   {
     path: "catalog", children: [
       { path: "", component: SearchComponent },

@@ -125,3 +125,8 @@ nav ul li {
 .copy {
     color: #FFF;
 }
+
+::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 2px;
+}

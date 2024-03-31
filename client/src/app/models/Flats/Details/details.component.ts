@@ -16,7 +16,7 @@ import { DetailsService } from "./details.service";
 
 export class DetailsComponent implements OnInit {
     id: string = ''
-    flat: any
+    flat: Flat | undefined
     owner: any
     regex = /userId=([^;]+)/;
 
@@ -25,10 +25,10 @@ export class DetailsComponent implements OnInit {
     }
 
     get isOwner(): boolean {
-        return this.flat.owner.toString() === this.owner[1]
+        return this.flat?.owner.toString() === this.owner[1]
     }
 
-    get Wants(): boolean {
+    get Wants(): boolean | undefined{
         return this.flat?.Watch.includes(this.owner[1])
     }
 

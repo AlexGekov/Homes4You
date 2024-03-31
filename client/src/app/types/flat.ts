@@ -6,5 +6,5 @@ export interface Flat {
     image: string,
     year: number,
     owner: string
-    Watch: []
+    Watch: string[]
 };
