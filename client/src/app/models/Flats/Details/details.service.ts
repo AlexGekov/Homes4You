@@ -13,6 +13,6 @@ export class DetailsService {
     constructor(private http: HttpClient) { }
 
     want(postId: string, ownerId: string) {
-        return this.http.post(`${environment.apiUrl}/posts/${postId}/watch`, { postId, ownerId})
+        return this.http.post(`${environment.apiUrl}/posts/${postId}/watch`, { postId, ownerId })
     }
 }

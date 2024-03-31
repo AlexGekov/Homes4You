@@ -8,20 +8,20 @@ import { CreatePostsComponent } from './models/Flats/Create/create.module';
 import { AboutComponent } from './components/About/about.component';
 import { DetailsComponent } from './models/Flats/Details/details.component';
 import { EditComponent } from './models/Flats/Edit/edit.component';
-import { authGuard } from './guards/auth.gurad';
+import { authGuard, revAuthGuard } from './guards/auth.gurad';
 
 const routes: Routes = [
   { path: "", component: HomeComponent },
-  { path: "login", component: LoginComponent },
-  { path: "register", component: RegisterComponent },
+  { path: "login", canActivate: [revAuthGuard], component: LoginComponent },
+  { path: "register", canActivate: [revAuthGuard], component: RegisterComponent },
   {
     path: "catalog", children: [
       { path: "", component: SearchComponent },
-      { path: ":postId/details/edit", component: EditComponent },
-      { path: ":postId/details", component: DetailsComponent },
+      { path: ":postId/details/edit", canActivate: [authGuard], component: EditComponent },
+      { path: ":postId/details", canActivate: [authGuard], component: DetailsComponent },
     ]
   },
-  { path: "create", component: CreatePostsComponent },
+  { path: "create", canActivate:[authGuard], component: CreatePostsComponent },
   { path: "about", component: AboutComponent },
 ];
 
